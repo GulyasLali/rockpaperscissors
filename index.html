@@ -1,0 +1,258 @@
+ <!DOCTYPE html>
+ <html lang="hu">
+<head>
+ <meta charset="UTF-8">
+<title>Kő papír olló</title>
+ </head>
+<body style="background-color: #F7B1AB;">
+      
+      <h1 style= "color:#E56717; text-align:center">
+         Kő papír olló</h1>
+      <div id="nyert" style="color: aliceblue;">Nyert meccsek: 0</div>
+      <div style="display: flex; line-height: 2; color: aliceblue;">
+         <div id="dont">Döntetlen meccsek: 0 </div>  
+         <div id="szoveg" style="position: relative; left: 430px; align-items: center; font-size: larger;"> </div>
+      </div>
+      <div id="loss" style="color: aliceblue;">Vesztes meccsek: 0</div>
+      
+      
+      <img id="ko" src="rock.png" onclick="gamer()"
+         style="position: relative;
+         left: 400px; border: 1px solid black" width="100px" height="200px"/>
+      
+      <img id="papír" src="paper.png" onclick="gamep()" alt="papír" style="position: relative;
+      left: 475px; border: 1px solid black" width="100px" height="200px"  />
+
+      <img id="olló" src="scissors.png" onclick="gameo()" alt="olló" style="position: relative;
+      left: 550px; border: 1px solid black"
+         width="100px" height="200px" />
+
+      <br>
+         
+      <br>
+      <br>
+      
+      <script>
+      let win = 0;
+      let draw = 0;
+      let lose = 0;
+      var img = document.createElement("img");
+function gamer()
+{
+      let Ellenfel = Math.floor(Math.random() * 3)+1;
+
+      switch(Ellenfel)
+      {
+         case 1:
+            var x = "rock.png";
+         break;
+
+         case 2:
+            var x = "paper.png";
+         break;
+
+         case 3:
+            var x = "scissors.png";
+         break;
+      }
+      
+         
+            if(x === "rock.png")
+         {
+            
+               
+                  img.src = "rock.png";
+                  img.width = "100";
+                  img.height = "200";
+                  img.style = "position: relative; left: 580px; border: 1px solid black";
+
+               document.body.appendChild(img);
+            
+            draw++;
+            document.getElementById("dont").innerHTML = "Döntetlen meccsek: "+draw;
+            document.getElementById("szoveg").innerHTML = "Hát ez X lett...";
+         }
+         else if(x === "paper.png")
+         {
+            
+               
+                  img.src = "paper.png";
+                  img.width = "100";
+                  img.height = "200";
+                  img.style = "position: relative; left: 580px; border: 1px solid black";
+               
+               document.body.appendChild(img);
+
+               
+            lose++;
+            document.getElementById("loss").innerHTML = "Vesztes meccsek: "+lose;
+            document.getElementById("szoveg").innerHTML = "lol... KIKAPTÁL!!";
+         }
+         else if(x === "scissors.png")
+         {
+            
+               
+                  img.src = "scissors.png";
+                  img.width = "100";
+                  img.height = "200";
+                  img.style = "position: relative; left: 580px; border: 1px solid black";
+               
+               document.body.appendChild(img);
+               
+            
+            win++;
+            document.getElementById("nyert").innerHTML = "Nyert meccsek: "+win;
+            document.getElementById("szoveg").innerHTML = "NYERTÉÉÉÉL!!";;
+         }
+      
+}
+
+function gamep()
+{
+      let Ellenfel = Math.floor(Math.random() * 3)+1;
+
+      switch(Ellenfel)
+      {
+         case 1:
+            var x = "rock.png";
+         break;
+
+         case 2:
+            var x = "paper.png";
+         break;
+
+         case 3:
+            var x = "scissors.png";
+         break;
+      }
+      
+         
+            if(x === "rock.png")
+         {
+            
+               
+                  img.src = "rock.png";
+                  img.width = "100";
+                  img.height = "200";
+                  img.style = "position: relative; left: 580px; border: 1px solid black";
+
+               document.body.appendChild(img);
+               
+
+            
+            win++;
+            document.getElementById("nyert").innerHTML = "Nyert meccsek: "+win;
+            document.getElementById("szoveg").innerHTML = "NYERTÉÉÉÉL!!";
+         }
+         else if(x === "paper.png")
+         {
+            
+               
+                  img.src = "paper.png";
+                  img.width = "100";
+                  img.height = "200";
+                  img.style = "position: relative; left: 580px; border: 1px solid black";
+               
+               document.body.appendChild(img);
+             
+               
+            draw++;
+            document.getElementById("dont").innerHTML = "Döntetlen meccsek: "+draw;
+            document.getElementById("szoveg").innerHTML = "Hát ez X lett...";
+         }
+         else if(x === "scissors.png")
+         {
+            
+               
+                  img.src = "scissors.png";
+                  img.width = "100";
+                  img.height = "200";
+                  img.style = "position: relative; left: 580px; border: 1px solid black";
+
+               document.body.appendChild(img);
+              
+            
+            lose++;
+            document.getElementById("loss").innerHTML = "Vesztes meccsek: "+lose;
+            document.getElementById("szoveg").innerHTML = "lol... KIKAPTÁL!!";
+         }
+      
+}
+function gameo()
+{
+      let Ellenfel = Math.floor(Math.random() * 3)+1;
+
+      switch(Ellenfel)
+      {
+         case 1:
+            var x = "rock.png";
+         break;
+
+         case 2:
+            var x = "paper.png";
+         break;
+
+         case 3:
+            var x = "scissors.png";
+         break;
+      }
+      
+         
+            if(x === "rock.png")
+         {
+            
+               img.replaceChildren();
+
+                  img.src = "rock.png";
+                  img.width = "100";
+                  img.height = "200";
+                  img.style = "position: relative; left: 580px; border: 1px solid black";
+
+               document.body.appendChild(img);
+               
+            
+            lose++;
+            document.getElementById("loss").innerHTML = "Vesztes meccsek: "+lose;
+            document.getElementById("szoveg").innerHTML = "lol... KIKAPTÁL!!";
+         }
+         else if(x === "paper.png")
+         {
+               img.replaceChildren();
+              
+                  img.src = "paper.png";
+                  img.width = "100";
+                  img.height = "200";
+                  img.style = "position: relative; left: 580px; border: 1px solid black";
+
+               document.body.appendChild(img);
+              
+               
+            win++;
+            document.getElementById("nyert").innerHTML = "Nyert meccsek: "+win;
+            document.getElementById("szoveg").innerHTML = "NYERTÉÉÉÉL!!";
+         }
+         else if(x === "scissors.png")
+         {
+            
+               img.replaceChildren();
+               
+
+                  img.src = "scissors.png";
+                  img.width = "100";
+                  img.height = "200";
+                  img.style = "position: relative; left: 580px; border: 1px solid black";
+                  
+               
+               document.body.appendChild(img);
+               
+            
+            draw++;
+            document.getElementById("dont").innerHTML = "Döntetlen meccsek: "+draw;
+            document.getElementById("szoveg").innerHTML = "Hát ez X lett...";
+         }
+      
+}
+
+      </script>
+</body>
+ </html>
